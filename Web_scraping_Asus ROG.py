@@ -3,13 +3,13 @@ from bs4 import BeautifulSoup
 import smtplib
 
  
-def check_price():
+def check_price(): # Function definition
     URL = "https://www.amazon.in/15-6-inch-FireCuda-Windows-Graphics-FX504GM-EN394T/dp/B07LDJ7ZHW/ref=sr_1_16?crid=1CP548XBFIU2F&keywords=asus+rog+laptops&qid=1563540270&s=gateway&sprefix=asus+rog%2Caps%2C295&sr=8-16"
-
+    #'headers' - is used to identify the requester(client) without manual intervention
     headers = {'User_Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'}
 
     page = requests.get(URL, headers=headers)
-    soup = BeautifulSoup(page.content, 'html.parser')
+    soup = BeautifulSoup(page.content, 'html.parser') #it is not possible for developer to access or modify the HTML file, for the same we make use of parser
 
     title = soup.find(id='productTitle').get_text()
     price = soup.find(id='priceblock_ourprice').get_text()
@@ -25,10 +25,10 @@ def check_price():
     print(price)
 
 
-def send_mail():
+def send_mail(): # Function definition
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
-    server.starttls()
+    server.starttls() # for secure connection
     server.ehlo()
 
     server.login('Mail ID','Your-Password')
@@ -45,6 +45,6 @@ def send_mail():
 
     print('The price drop has been intimidated to the mail recipients')
 
-    server.quit()
+    server.quit() #make a note of it
     
-check_price()    
+check_price()    #Function call
