@@ -1,7 +1,7 @@
 import time
 import math
 
-def prime_num_v1(n):
+def prime_num_v1(n):#Method 1
     if n==1:
         return False
 
@@ -11,7 +11,7 @@ def prime_num_v1(n):
     return True
 
 
-def prime_num_v2(n):
+def prime_num_v2(n): #Method 2
     if n==1:
         return False
 
@@ -24,7 +24,8 @@ def prime_num_v2(n):
 
 n = int(input("Enter number: "))
 print('Is this a prime number? ',n, prime_num_v1(n))
-'''        
+'''      
+To check time of process
 t0 = time.time()
 for n in range(1, 100):
     print(n, prime_num_v2(n))
