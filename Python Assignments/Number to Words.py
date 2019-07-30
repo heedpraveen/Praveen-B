@@ -3,7 +3,12 @@ The methods of the class engine in module inflect.py provide plural
 inflections, singular noun inflections, “a”/”an” selection for English
 words, and manipulation of numbers as words.
 
-Here have used number_to_words function only
+Question: Print word of a given number
+
+    EG:  INPUT --> 98
+         OUTPUT --> ninety-eight
+
+Before importing below library make sure it is installed. If not use 'pip install inflect,num2words'
 '''
 
 import inflect
