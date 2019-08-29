@@ -6,7 +6,7 @@ import smtplib
 def check_price():
     URL = "https://www.amazon.in/Giant-Innovative-Stylish-Sunglasses-Aviator/dp/B07MPSZ7NK/ref=bbp_bb_d33a38_st_CCqh_w_0?psc=1&smid=ANTJPL45A9VCN"
 
-    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'}
+    headers = "type in google to get your user agent(Like, my user agent) and write as {'User_Agent':'copy the whole link displayed in google search'}"
 
     page = requests.get(URL, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -28,15 +28,15 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('praveenciet2011@gmail.com', 'Wiprotec@123')
+    server.login('your mail-id', 'your-password')
 
     sub = 'Alert! price reduced'
     body = 'Click on the following amazon link: https://www.amazon.in/Giant-Innovative-Stylish-Sunglasses-Aviator/dp/B07MPSZ7NK/ref=bbp_bb_d33a38_st_CCqh_w_0?psc=1&smid=ANTJPL45A9VCN'
     msg =f'Subject: {sub}\n\n{body}'
 
     server.sendmail(
-        'praveenciet2011@gmail.com',
-        'praveenb9629@gmail.com',
+        'from(your mail-id)',
+        'to recepient mail-id',
         msg)
 
     print("Hey mail has been sent")
