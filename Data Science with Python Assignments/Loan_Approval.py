@@ -396,4 +396,4 @@ pd.DataFrame(submission, columns=['Loan_ID','Loan_Status']).to_csv('logistic.csv
 ​
 pd.DataFrame(submission, columns=['Loan_ID','Loan_Status']).to_csv('logistic.csv')
 ​
-​
+
